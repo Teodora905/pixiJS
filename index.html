@@ -28,6 +28,9 @@
     //app.stage.addChild(reelContainer);
     const json = PIXI.Assets.load("./assets/spritesheet/codingTaskAssets.json");
     console.log('json',json);
+    json.then((resolvedTexture) =>{
+      console.log('resolvedTexture', resolvedTexture);
+    )}
    
   </script>
 </body>
