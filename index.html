@@ -30,6 +30,10 @@
     console.log('json',json);
     json.then((resolvedTexture) =>{
       console.log('resolvedTexture', resolvedTexture);
+      const symbolSprites = [];
+      symbolSprites = resolvedTexture.textures.filter((symbol) => symbol.startsWith("symbol_"));
+      console.log('symbolSprites', symbolSprites);
+      //symbolSprites.push(PIXI.Texture.fromFrame('Reels_Frame.png'));
     });
    
   </script>
