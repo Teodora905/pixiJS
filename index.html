@@ -4,74 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
-  <style>
-    body { 
-      text-align: center; 
-      font-family: Arial, sans-serif; 
-    }
-    body:before {
-      content: '';
-      display: block;
-      background-image: url(./background.jpg);
-      position: absolute;
-      width: calc(100vw - 25px);
-      height: calc(100vh - -25px);
-      background-size: cover;
-      background-repeat: no-repeat;
-      z-index: -1;
-      top: 0;
-    }
-    #slot-container { 
-      position: relative;
-      max-width: 500px;
-      text-wrap: nowrap;
-      overflow: hidden;
-      padding: 15px 0;
-      margin: 50px auto;
-    }
-    #reel { 
-      top: 0; 
-      position: relative;
-      transition: left 1s ease;
-    }
-    .symbol { 
-      display: inline-block; 
-      align-items: center; 
-      justify-content: center;
-      width: 100px; 
-      height: 100px;
-    }
-    img {
-      width: 100%;
-    }
-    #win-frame { 
-      background-image: url("./winframe.png");
-      position: absolute;
-      width: 130px;
-      height: 130px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 100%;
-      top: 2px;
-      left: calc(50% - 64px);
-    }
-    #message {
-      margin-top: 20px; 
-      font-size: 18px; 
-      color: #FFF;
-    }
-    #spin-button { 
-      background-image: url(./spin_button.png);
-      margin-top: 20px;
-      width: 50px;
-      height: 80px;
-      background-size: 50px 80px;
-      background-repeat: no-repeat;
-      font-size: 18px;
-      margin: 0 auto;
-      cursor: pointer;
-    }
-  </style>
+  
 </head>
 <body>
   <div id="slot-container">
@@ -84,99 +17,11 @@
   <script>
     const reel = document.getElementById('reel');
     const message = document.getElementById('message');
-    const symbols = [
-      {
-        'prize' : '10',
-        'name' : '10',
-        'src' : './symbol_10.png',
-        'class' : 'symbol-10'
-      },
-      {
-        'prize' : '20',
-        'name' : '9',
-        'src' : './symbol_9.png',
-        'class' : 'symbol-9'
-      },
-      {
-        'prize' : '30',
-        'name' : 'ace',
-        'src' : './symbol_ace.png',
-        'class' : 'symbol-ace'
-      },
-      {
-        'prize' : '40',
-        'name' : 'axe',
-        'src' : './symbol_axe.png',
-        'class' : 'symbol-axe'
-      },
-      {
-        'prize' : '40',
-        'name' : 'brain',
-        'src' : './symbol_brain.png',
-        'class' : 'symbol-brain'
-      },
-      {
-        'prize' : '50',
-        'name' : 'crow',
-        'src' : './symbol_crow.png',
-        'class' : 'symbol-crow'
-      },
-      {
-        'prize' : '60',
-        'name' : 'jack',
-        'src' : './symbol_jack.png',
-        'class' : 'symbol-jack'
-      },
-      {
-        'prize' : '70',
-        'name' : 'king',
-        'src' : './symbol_king.png',
-        'class' : 'symbol-king'
-      },
-      {
-        'prize' : '80',
-        'name' : 'queen',
-        'src' : './symbol_queen.png',
-        'class' : 'symbol-queen'
-      },
-      {
-        'prize' : '90',
-        'name' : 'rifle',
-        'src' : './symbol_rifle.png',
-        'class' : 'symbol-rifle'
-      },
-    ];
-    console.log('symbols',symbols);
-    let renderIndex = 5;
-    // Create the reel imgs
-    for (i = 0; i < symbols.length; i++) {
-      //Create the divs:
-      var div = document.createElement('div');
-      div.classList.add('symbol')
-      reel.appendChild(div);
-      var img = document.createElement('img');
-      img.src = symbols[i].src;
-      img.classList.add(symbols[i].class);
-      div.appendChild(img);
-
-    }
-    
-    document.getElementById('spin-button').addEventListener('click', () => {
-      // Randomize the result
-      const randomIndex = Math.floor(Math.random() * symbols.length);
-      console.log('randomIndex', randomIndex);
-      const stopPosition = (-randomIndex * 100) + 200; // Assuming symbol height is 100px
-
-      // Animate reel spin
-      reel.style.left = `${stopPosition}px`;
-
-      // Display winning message
-      setTimeout(() => {
-        const winningSymbol = symbols[randomIndex];
-        console.log('winningSymbol', winningSymbol.name);
-        console.log('winningSymbol', winningSymbol.prize);
-        message.textContent = `${winningSymbol.name} wins $${parseFloat(winningSymbol.prize).toFixed(2)}`;
-      }, 1000); // Wait for animation to complete
+    // Create a PixiJS Application
+    const app = new PIXI.Application({
+      width: 500,
+      height: 400,
+      background: '#1099bb',
     });
   </script>
 </body>
