@@ -26,10 +26,9 @@
     document.getElementById('slot-container').appendChild(app.view);
     //const reelContainer = new PIXI.Container();
     //app.stage.addChild(reelContainer);
-    const json = "./assets/spritesheet/codingTaskAssets.json"
-    PIXI.Assets.load(json).then(() => {
-      console.log('json',json);
-    )}
+    const json = Assets.init({manifest: "./assets/spritesheet/codingTaskAssets.json"});
+    console.log('json',json);
+   
   </script>
 </body>
 </html>
