@@ -82,7 +82,7 @@
       button.on('pointerdown', () => {
         const randomIndex = Math.floor(Math.random() * imageNames.length);
         const stopPosition = (-randomIndex * 50) + 100; // Assuming symbol height is 100px
-        const duration = 2000; // Duration of the movement in milliseconds (2 seconds)
+        const duration = 1000; // Duration of the movement in milliseconds (2 seconds)
         const targetX = stopPosition; // The target x position
         const tween = new TWEEN.Tween(reelContainer)
           .to({ x: targetX }, duration)  // Move to targetX over `duration`
