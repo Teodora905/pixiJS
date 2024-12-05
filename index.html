@@ -42,7 +42,7 @@
       height: 600,
       backgroundColor: 0x1099bb,
     });
-    slotContainer.appendChild(app.view);
+    
 
     console.log('app', app);
 
@@ -63,6 +63,7 @@
         reelContainer.addChild(sprite);
 
       })
+      
       console.log("spritesheet.textures['winframe.png']", spritesheet.textures['winframe.png']);
       const highlight = new PIXI.Sprite(spritesheet.textures['winframe.png']);
       highlight.width = 50; // Adjust to match your sprite size
@@ -79,9 +80,6 @@
       button.y = 150;
       button.buttonMode = true;
       app.stage.addChild(button);
-      const buttonContainer = new PIXI.Container();
-      app.stage.addChild(buttonContainer);
-      //app.stage.addChild(reelContainer);
 
       button.on('pointerdown', () => {
         console.log('123')
@@ -93,7 +91,7 @@
       }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
       });
-
+  slotContainer.appendChild(app.view);
     
     function test1() {
       document.getElementById('slot-container').appendChild(app.view);
