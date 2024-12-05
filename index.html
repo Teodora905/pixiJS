@@ -25,6 +25,27 @@
       height: 400,
       background: '#1099bb',
     });
+    const loader = new PIXI.Loader();
+    loader.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
+
+    loader.load((loader, resources) => {
+    // Access the loaded spritesheet
+    const spritesheet = resources.spritesheet.spritesheet;
+  
+    // Access textures by name
+    const image1 = new PIXI.Sprite(spritesheet.textures['symbol_9.png']);
+    const image2 = new PIXI.Sprite(spritesheet.textures['symbol_10.png']);
+  
+    // Position and add sprites to the stage
+    image1.x = 100;
+    image1.y = 100;
+    app.stage.addChild(image1);
+  
+    image2.x = 200;
+    image2.y = 200;
+    app.stage.addChild(image2);
+  });
+
 
     
     function test1() {
