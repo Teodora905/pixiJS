@@ -71,6 +71,7 @@
       app.stage.addChild(highlight);
 
       const button = new PIXI.Sprite(spritesheet.textures['spin_button.png']);
+      button.interactive = true;
       button.width = 50; // Adjust to match your sprite size
       button.height = 50; 
       button.x = 150;
