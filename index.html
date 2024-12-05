@@ -29,6 +29,7 @@
     const json = PIXI.Assets.load("./assets/spritesheet/codingTaskAssets.json");
     console.log('json',json);
     json.then((resolvedTexture) =>{
+      console.log('resolvedTexture', resolvedTexture);
       console.log('resolvedTexture.textures', resolvedTexture.textures);
       const symbols = resolvedTexture.textures;
       const symbolSprites = [];
