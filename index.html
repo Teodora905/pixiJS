@@ -32,15 +32,19 @@
     console.log('json',json);
     //const myArr = JSON.parse(json);
     //console.log('myArr', myArr);
-    async function loadSpriteSheet() {
-      json.then((resolvedTexture) =>{
-      console.log('resolvedTexture', resolvedTexture);
-      const spritesheet = new PIXI.Spritesheet(
-          PIXI.Texture.from(resolvedTexture.data.meta.image),
-          resolvedTexture
-      );
-      await spritesheet.parse();
-      console.log('spritesheet', spritesheet);
+   
+    json.then((resolvedTexture) =>{
+        console.log('resolvedTexture', resolvedTexture);
+        const spritesheet = new PIXI.Spritesheet(
+            PIXI.Texture.from(resolvedTexture.data.meta.image),
+            resolvedTexture
+        );
+        spritesheet.parse().then(() => {
+          console.log('spritesheet', spritesheet);
+        }).catch((error) => {
+          console.error('Error parsing spritesheet:', error);
+        });
+
       console.log('resolvedTexture.textures', resolvedTexture.textures);
       const symbols = resolvedTexture.textures;
       const symbolSprites = [];
@@ -49,8 +53,11 @@
       symbolSprites.push(symbols['symbol_9.png'], symbols['symbol_10.png'], symbols['symbol_ace.png'], symbols['symbol_axe.png'], symbols['symbol_brain.png'], symbols['symbol_crow.png'], symbols['symbol_jack.png'], symbols['symbol_king.png'],symbols['symbol_king.png'], symbols['symbol_rifle.png']);
       console.log('symbolSprites', symbolSprites);
     });
-    }
-    loadSpriteSheet();
+      
+   
+   
+    
+   
    
   </script>
 </body>
