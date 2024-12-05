@@ -69,6 +69,14 @@
       highlight.y = 100;
       highlight.visible = true;
       app.stage.addChild(highlight);
+
+      const button = new PIXI.Sprite(spritesheet.textures['spin_button.png']);
+      button.width = 50; // Adjust to match your sprite size
+      button.height = 50; 
+      button.x = 150;
+      button.y = 150;
+      app.stage.addChild(button);
+      
       }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
       });
