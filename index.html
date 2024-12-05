@@ -36,7 +36,7 @@
     json.then((resolvedTexture) =>{
         console.log('resolvedTexture', resolvedTexture);
         console.log('resolvedTexture.data.meta.image',resolvedTexture.data.meta.image);
-        const spritesheet = new PIXI.Spritesheet(
+        /*const spritesheet = new PIXI.Spritesheet(
             PIXI.Texture.from(resolvedTexture.data.meta.image),
             resolvedTexture
         );
@@ -44,7 +44,8 @@
           console.log('spritesheet', spritesheet);
         }).catch((error) => {
           console.error('Error parsing spritesheet:', error);
-        });
+        });*/
+        resolvedTexture.data.animations.symbols.push('symbol_9.png', 'symbol_10.png');
 
       console.log('resolvedTexture.textures', resolvedTexture.textures);
       const symbols = resolvedTexture.textures;
