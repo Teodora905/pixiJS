@@ -80,25 +80,24 @@
       app.stage.addChild(button);
 
       button.on('pointerdown', () => {
-        console.log('123')
         const randomIndex = Math.floor(Math.random() * imageNames.length);
         const stopPosition = (-randomIndex * 50) + 100; // Assuming symbol height is 100px
-        console.log('stopPosition',stopPosition);
+        const duration = 2000; // Duration of the movement in milliseconds (2 seconds)
+        const targetX = stopPosition; // The target x position
+        const tween = new TWEEN.Tween(reelContainer)
+          .to({ x: targetX }, duration)  // Move to targetX over `duration`
+          .easing(TWEEN.Easing.Quadratic.Out) // Ease out for smooth transition
+          .start(); // Start the tween animation
+        
+        // Update the tween during each frame
+        app.ticker.add((delta) => {
+          TWEEN.update(); // Update all active tweens
+        });
         reelContainer.x = stopPosition; // Adjust the x position
       });
 
-      const targetX = stopPosition; // The target x position
-      const duration = 2000; // Duration of the movement in milliseconds (2 seconds)
 
-      const tween = new TWEEN.Tween(sprite)
-        .to({ x: targetX }, duration)  // Move to targetX over `duration`
-        .easing(TWEEN.Easing.Quadratic.Out) // Ease out for smooth transition
-        .start(); // Start the tween animation
       
-      // Update the tween during each frame
-      app.ticker.add((delta) => {
-        TWEEN.update(); // Update all active tweens
-      });
       
       }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
