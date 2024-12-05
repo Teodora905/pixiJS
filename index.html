@@ -32,7 +32,7 @@
     //console.log('myArr', myArr);
     json.then((resolvedTexture) =>{
       console.log('resolvedTexture', resolvedTexture);
-      const spritesheet = new Spritesheet(
+      const spritesheet = new PIXI.Spritesheet(
           Texture.from(resolvedTexture.data.meta.image),
           atlasData
       );
