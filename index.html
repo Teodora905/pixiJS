@@ -8,8 +8,7 @@
 </head>
 <body>
   <div id="slot-container">
-    <div id="reel"></div>
-    <div id="win-frame"></div>
+   
   </div>
   <div id="message"></div>
   <div id="spin-button"></div>
@@ -22,7 +21,7 @@
   <script type="module">
     //import * as PIXI from 'https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js';
     
-    const reel = document.getElementById('reel');
+    const slotContainer = document.getElementById('slot-container');
     const message = document.getElementById('message');
 
     const imageNames = [
@@ -43,7 +42,7 @@
       height: 600,
       backgroundColor: 0x1099bb,
     });
-    reel.appendChild(app.view);
+    slotContainer.appendChild(app.view);
 
     console.log('app', app);
 
