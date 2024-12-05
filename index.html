@@ -76,7 +76,7 @@
       button.x = 150;
       button.y = 150;
       button.buttonMode = true;
-      
+      app.stage.addChild(button);
 
       button.on('pointerdown', () => {
         console.log('123')
@@ -84,8 +84,6 @@
         const stopPosition = (-randomIndex * 50) + 100; // Assuming symbol height is 100px
         reelContainer.y -= stopPosition; // Adjust the y position
       });
-
-      app.stage.addChild(button);
       
       }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
