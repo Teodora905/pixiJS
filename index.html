@@ -36,6 +36,7 @@
           PIXI.Texture.from(resolvedTexture.data.meta.image),
           resolvedTexture
       );
+      await spritesheet.parse();
       console.log('spritesheet', spritesheet);
       console.log('resolvedTexture.textures', resolvedTexture.textures);
       const symbols = resolvedTexture.textures;
