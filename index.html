@@ -47,7 +47,9 @@
     console.log('app', app);
 
     PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
-
+    const reelContainer = new PIXI.Container();
+    app.stage.addChild(reelContainer);
+    
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
       console.log('spritesheet', spritesheet);
       imageNames.forEach((name, index) => {
@@ -58,7 +60,7 @@
         sprite.height = 50;
         sprite.x = index * 50; // Example: horizontal spacing
         sprite.y = 100; // Keep them on the same row
-        app.stage.addChild(sprite);
+        reelContainer.addChild(sprite);
 
       })
       console.log("spritesheet.textures['winframe.png']", spritesheet.textures['winframe.png']);
@@ -76,6 +78,12 @@
       button.x = 150;
       button.y = 150;
       app.stage.addChild(button);
+
+      button.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * imageNames.length);
+        const stopPosition = (-randomIndex * 50) + 100; // Assuming symbol height is 100px
+        sprite.y -= 50; // Adjust the y position
+      });
       
       }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
