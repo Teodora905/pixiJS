@@ -54,9 +54,10 @@
 
         app.stage.addChild(sprite);
 
-    }).catch((error) => {
-      console.error("Failed to load spritesheet:", error);
-    });
+      }).catch((error) => {
+        console.error("Failed to load spritesheet:", error);
+      });
+    }
     
     function test1() {
       document.getElementById('slot-container').appendChild(app.view);
@@ -98,11 +99,6 @@
 
     }
       
-   
-   
-    
-   
-   
   </script>
 </body>
 </html>
