@@ -42,12 +42,12 @@
       height: 600,
       backgroundColor: 0x1099bb,
     });
-    slotContainer.appendChild(app.view);
-
-    PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
+    document.body.appendChild(app.view);
+    
     const reelContainer = new PIXI.Container();
     app.stage.addChild(reelContainer);
     
+    PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
       console.log('spritesheet', spritesheet);
       imageNames.forEach((name, index) => {
