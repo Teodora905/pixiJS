@@ -45,9 +45,10 @@
         }).catch((error) => {
           console.error('Error parsing spritesheet:', error);
         });*/
-        resolvedTexture.data.animations = {
+        resolvedTexture.data.animations.push('symbols');
+        /*resolvedTexture.data.animations = {
           'symbols': ['symbol_9.png', 'symbol_10.png']
-        }
+        }*/
 
       console.log('resolvedTexture.textures', resolvedTexture.textures);
       const symbols = resolvedTexture.textures;
