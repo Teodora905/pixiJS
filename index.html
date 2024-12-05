@@ -27,6 +27,8 @@
     });
     document.getElementById('slot-container').appendChild(app.view);
 
+    console.log('app', app);
+
     PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
 
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
