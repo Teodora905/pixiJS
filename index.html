@@ -42,8 +42,8 @@
       height: 600,
       backgroundColor: 0x1099bb,
     });
+    slotContainer.appendChild(app.view);
     
-
     console.log('app', app);
 
     PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
@@ -91,7 +91,7 @@
       }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
       });
-  slotContainer.appendChild(app.view);
+  
     
     function test1() {
       document.getElementById('slot-container').appendChild(app.view);
