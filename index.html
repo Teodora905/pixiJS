@@ -54,6 +54,8 @@
         const textureName = `${name}.png`; // Add the .png extension
         const sprite = new PIXI.Sprite(spritesheet.textures[textureName]);
 
+        sprite.width = 200;
+        sprite.height = 200;
         sprite.x = index * 100; // Example: horizontal spacing
         sprite.y = 200; // Keep them on the same row
 
