@@ -62,18 +62,6 @@
 
       })
 
-      // Create a mask (e.g., a rectangle or circle)
-      const mask = new PIXI.Graphics();
-      mask.beginFill(0x000000, 1); // Solid color for mask (not visible)
-      mask.drawRect(100, 100, 400, 200); // Define the area to keep visible
-      mask.endFill();
-      
-      // Apply the mask to the container
-      reelContainer.mask = mask;
-      
-      // Add the mask to the stage
-      reelContainer.addChild(mask);
-      
       const highlight = new PIXI.Sprite(spritesheet.textures['winframe.png']);
       highlight.width = 50; // Adjust to match your sprite size
       highlight.height = 50; 
