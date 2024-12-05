@@ -49,7 +49,8 @@
         resolvedTexture.data.animations = {
           'symbols': ['symbol_9.png', 'symbol_10.png']
         }
-
+      const anim = new PIXI.AnimatedSprite(resolvedTexture.data.animations.symbols);
+      console.log('anim', anim);
       console.log('resolvedTexture.textures', resolvedTexture.textures);
       const symbols = resolvedTexture.textures;
       const symbolSprites = [];
