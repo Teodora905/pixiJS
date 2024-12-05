@@ -79,6 +79,9 @@
       button.y = 150;
       button.buttonMode = true;
       app.stage.addChild(button);
+      const buttonContainer = new PIXI.Container();
+      app.stage.addChild(buttonContainer);
+      //app.stage.addChild(reelContainer);
 
       button.on('pointerdown', () => {
         console.log('123')
