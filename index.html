@@ -35,14 +35,16 @@
     // Access textures using the frame names from the JSON
     const image1 = new PIXI.Sprite(spritesheet.textures['symbol_9.png']);
     const image2 = new PIXI.Sprite(spritesheet.textures['symbol_10.png']);
+
+      console.log('spritesheet', spritesheet);
   
     // Position and add sprites to the stage
     image1.x = 100;
     image1.y = 100;
     app.stage.addChild(image1);
   
-    image2.x = 200;
-    image2.y = 200;
+    image2.x = 100;
+    image2.y = 100;
     app.stage.addChild(image2);
   }).catch((error) => {
     console.error("Failed to load spritesheet:", error);
