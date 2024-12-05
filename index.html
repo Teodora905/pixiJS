@@ -83,7 +83,7 @@
         console.log('123')
         const randomIndex = Math.floor(Math.random() * imageNames.length);
         const stopPosition = (-randomIndex * 50) + 100; // Assuming symbol height is 100px
-        reelContainer.y -= stopPosition; // Adjust the y position
+        reelContainer.x -= stopPosition; // Adjust the x position
       });
       
       }).catch((error) => {
