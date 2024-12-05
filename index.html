@@ -20,6 +20,19 @@
     const reel = document.getElementById('reel');
     const message = document.getElementById('message');
 
+    const imageNames = [
+      'symbol_jack',
+      'symbol_9',
+      'symbol_ace',
+      'symbol_queen',
+      'symbol_king',
+      'symbol_axe',
+      'symbol_brain',
+      'symbol_rifle',
+      'symbol_crow',
+      'symbol_10',
+    ];
+
     const app = new PIXI.Application({
       width: 800,
       height: 600,
@@ -32,23 +45,18 @@
     PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
 
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
-    // Access textures using the frame names from the JSON
-    const image1 = new PIXI.Sprite(spritesheet.textures['symbol_9.png']);
-    const image2 = new PIXI.Sprite(spritesheet.textures['symbol_10.png']);
+      imageNames.forEach((name, index) => {
+        const textureName = `${name}.png`; // Add the .png extension
+        const sprite = new PIXI.Sprite(spritesheet.textures[textureName]);
 
-      console.log('spritesheet', spritesheet);
-  
-    // Position and add sprites to the stage
-    image1.x = 100;
-    image1.y = 100;
-    app.stage.addChild(image1);
-  
-    image2.x = 300;
-    image2.y = 100;
-    app.stage.addChild(image2);
-  }).catch((error) => {
-    console.error("Failed to load spritesheet:", error);
-  });
+        sprite.x = (i - 1) * 80; // Example: horizontal spacing
+        sprite.y = 200; // Keep them on the same row
+
+        app.stage.addChild(sprite);
+
+    }).catch((error) => {
+      console.error("Failed to load spritesheet:", error);
+    });
     
     function test1() {
       document.getElementById('slot-container').appendChild(app.view);
