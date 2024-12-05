@@ -25,7 +25,10 @@
       height: 400,
       background: '#1099bb',
     });
-    document.getElementById('slot-container').appendChild(app.view);
+
+    
+    function test1() {
+      document.getElementById('slot-container').appendChild(app.view);
     //const reelContainer = new PIXI.Container();
     //app.stage.addChild(reelContainer);
     const json = PIXI.Assets.load("./assets/spritesheet/codingTaskAssets.json");
@@ -58,6 +61,8 @@
       //console.log('symbolSprites', symbolSprites);
       symbolSprites.push(symbols['symbol_9.png'], symbols['symbol_10.png'], symbols['symbol_ace.png'], symbols['symbol_axe.png'], symbols['symbol_brain.png'], symbols['symbol_crow.png'], symbols['symbol_jack.png'], symbols['symbol_king.png'],symbols['symbol_king.png'], symbols['symbol_rifle.png']);
       console.log('symbolSprites', symbolSprites);
+    }
+    
     });
       
    
