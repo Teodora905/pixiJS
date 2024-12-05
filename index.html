@@ -66,7 +66,7 @@
       const highlight = new PIXI.Sprite(spritesheet.textures['winframe.png']);
       highlight.width = 100; // Adjust to match your sprite size
       highlight.height = 100; 
-      highlight.visible = false;
+      highlight.visible = true;
       app.stage.addChild(highlight);
       }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
