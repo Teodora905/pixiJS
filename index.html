@@ -34,7 +34,7 @@
       console.log('resolvedTexture', resolvedTexture);
       const spritesheet = new PIXI.Spritesheet(
           PIXI.Texture.from(resolvedTexture.data.meta.image),
-          atlasData
+          resolvedTexture
       );
       console.log('spritesheet', spritesheet);
       console.log('resolvedTexture.textures', resolvedTexture.textures);
