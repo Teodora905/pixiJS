@@ -43,8 +43,10 @@
       backgroundColor: 0x1099bb,
     });
     slotContainer.appendChild(app.view);
+   
     
     const reelContainer = new PIXI.Container();
+    reelContainer.sortableChildren = true;
     app.stage.addChild(reelContainer);
     
     PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
