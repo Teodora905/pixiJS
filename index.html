@@ -53,7 +53,7 @@
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
       console.log('spritesheet', spritesheet);
       const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
-      background.zIndex = 0;
+      background.zIndex = -1;
       background.width = app.screen.width;
       background.height = app.screen.height;
       app.stage.addChild(background);
