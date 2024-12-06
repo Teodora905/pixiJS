@@ -52,11 +52,6 @@
     
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
       console.log('spritesheet', spritesheet);
-      const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
-      background.zIndex = -1;
-      background.width = app.screen.width;
-      background.height = app.screen.height;
-      app.stage.addChild(background);
       
       imageNames.forEach((name, index) => {
         const textureName = `${name}.png`; // Add the .png extension
@@ -70,6 +65,12 @@
         reelContainer.addChild(sprite);
 
       })
+
+      const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
+      background.zIndex = -1;
+      background.width = app.screen.width;
+      background.height = app.screen.height;
+      app.stage.addChild(background);
 
       const highlight = new PIXI.Sprite(spritesheet.textures['winframe.png']);
       highlight.zIndex = 1;
