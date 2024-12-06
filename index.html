@@ -63,7 +63,7 @@
         sprite.zIndex = 2;
         sprite.width = 50;
         sprite.height = 50;
-        sprite.x = index * 50; // Example: horizontal spacing
+        sprite.x = index * 50; // horizontal spacing
         sprite.y = 100; // Keep them on the same row
         reelContainer.addChild(sprite);
 
@@ -94,6 +94,15 @@
       button.buttonMode = true;
       app.stage.addChild(button);
 
+      const message = new PIXI.Text('Press the button', {
+        fontFamily: 'Arial',
+        fontSize: 25,
+        fill: 0xffffff,
+        align: 'center'
+      });
+      message.zIndex = 1;
+      app.stage.addChild(message);
+
       button.on('pointerdown', () => {
         const randomIndex = Math.floor(Math.random() * imageNames.length);
         console.log('randomIndex', randomIndex);
@@ -105,11 +114,10 @@
           .easing(TWEEN.Easing.Quadratic.Out) // Ease out for smooth transition
           .start(); // Start the tween animation
         
-        // Update the tween during each frame
         app.ticker.add((delta) => {
-          TWEEN.update(); // Update all active tweens
+          TWEEN.update(); 
         });
-        //reelContainer.x = stopPosition; // Adjust the x position
+       
       });
       
       
