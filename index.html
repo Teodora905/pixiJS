@@ -48,7 +48,7 @@
     
     const reelContainer = new PIXI.Container();
     reelContainer.sortableChildren = true;
-    reelContainer.x = app.screen.width / 2;
+    reelContainer.x = (app.screen.width - reelContainer.width) / 2;
     reelContainer.y = 100;
     app.stage.addChild(reelContainer);
     
