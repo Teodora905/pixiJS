@@ -57,7 +57,7 @@
         const textureName = `${name}.png`; // Add the .png extension
         const sprite = new PIXI.Sprite(spritesheet.textures[textureName]);
 
-        sprite.zIndex = 1;
+        sprite.zIndex = 2;
         sprite.width = 50;
         sprite.height = 50;
         sprite.x = index * 50; // Example: horizontal spacing
@@ -73,7 +73,7 @@
       app.stage.addChild(background);
 
       const highlight = new PIXI.Sprite(spritesheet.textures['winframe.png']);
-      highlight.zIndex = 1;
+      highlight.zIndex = 3;
       highlight.width = 50; // Adjust to match your sprite size
       highlight.height = 50; 
       highlight.x = 100;
