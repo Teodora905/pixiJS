@@ -53,6 +53,7 @@
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
       console.log('spritesheet', spritesheet);
       const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
+      background.zIndex = 0;
       background.width = app.screen.width;
       background.height = app.screen.height;
       app.stage.addChild(background);
@@ -61,6 +62,7 @@
         const textureName = `${name}.png`; // Add the .png extension
         const sprite = new PIXI.Sprite(spritesheet.textures[textureName]);
 
+        sprite.zIndex = 1;
         sprite.width = 50;
         sprite.height = 50;
         sprite.x = index * 50; // Example: horizontal spacing
@@ -70,6 +72,7 @@
       })
 
       const highlight = new PIXI.Sprite(spritesheet.textures['winframe.png']);
+      highlight.zIndex = 1;
       highlight.width = 50; // Adjust to match your sprite size
       highlight.height = 50; 
       highlight.x = 100;
@@ -78,6 +81,7 @@
       app.stage.addChild(highlight);
 
       const button = new PIXI.Sprite(spritesheet.textures['spin_button.png']);
+      button.zIndex = 1;
       button.interactive = true;
       button.width = 50; // Adjust to match your sprite size
       button.height = 50; 
