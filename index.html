@@ -95,13 +95,15 @@
         });
         //reelContainer.x = stopPosition; // Adjust the x position
       });
-
-
+      const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
+      background.width = app.screen.width;
+      background.height = app.screen.height;
+      app.stage.addChild(background);
       
-      
-      }).catch((error) => {
+
+    }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
-      });
+    });
   
     
     function test1() {
