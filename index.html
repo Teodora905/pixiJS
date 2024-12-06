@@ -48,6 +48,11 @@
     app.stage.addChild(reelContainer);
     
     PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
+    const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
+    background.width = app.screen.width;
+    background.height = app.screen.height;
+    app.stage.addChild(background);
+    
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
       console.log('spritesheet', spritesheet);
       imageNames.forEach((name, index) => {
@@ -95,10 +100,7 @@
         });
         //reelContainer.x = stopPosition; // Adjust the x position
       });
-      const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
-      background.width = app.screen.width;
-      background.height = app.screen.height;
-      app.stage.addChild(background);
+      
       
 
     }).catch((error) => {
