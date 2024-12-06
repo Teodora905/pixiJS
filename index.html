@@ -101,6 +101,8 @@
         align: 'center'
       });
       message.zIndex = 1;
+      message.x = 150;
+      message.y = 150;
       app.stage.addChild(message);
 
       button.on('pointerdown', () => {
@@ -117,6 +119,12 @@
         app.ticker.add((delta) => {
           TWEEN.update(); 
         });
+
+        setTimeout(() => {
+          const winningSymbol = imageNames[randomIndex];
+          message.text = `${winningSymbol} wins $${parseFloat(randomIndex*10).toFixed(2)}`;
+          
+        }, 1000); // Wait for animation to complete
        
       });
       
