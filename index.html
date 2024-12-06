@@ -48,13 +48,15 @@
     app.stage.addChild(reelContainer);
     
     PIXI.Assets.add('spritesheet', './assets/spritesheet/codingTaskAssets.json');
-    const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
-    background.width = app.screen.width;
-    background.height = app.screen.height;
-    app.stage.addChild(background);
+    
     
     PIXI.Assets.load('spritesheet').then((spritesheet) => {
       console.log('spritesheet', spritesheet);
+      const background = PIXI.Sprite.from(spritesheet.textures['background.jpg']);
+      background.width = app.screen.width;
+      background.height = app.screen.height;
+      app.stage.addChild(background);
+      
       imageNames.forEach((name, index) => {
         const textureName = `${name}.png`; // Add the .png extension
         const sprite = new PIXI.Sprite(spritesheet.textures[textureName]);
