@@ -121,7 +121,7 @@
         });
 
         setTimeout(() => {
-          const winningSymbol = imageNames[randomIndex];
+          const winningSymbol = imageNames[randomIndex].replace(/_/g, " ");
           message.text = `${winningSymbol} wins $${parseFloat((randomIndex+1)*10).toFixed(2)}`;
           
         }, 1000); // Wait for animation to complete
