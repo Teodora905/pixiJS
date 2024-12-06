@@ -96,13 +96,13 @@
 
       const message = new PIXI.Text('Press the button', {
         fontFamily: 'Arial',
-        fontSize: 25,
+        fontSize: 15,
         fill: 0xffffff,
         align: 'center'
       });
       message.zIndex = 1;
       message.x = 150;
-      message.y = 150;
+      message.y = 250;
       app.stage.addChild(message);
 
       button.on('pointerdown', () => {
@@ -127,54 +127,10 @@
         }, 1000); // Wait for animation to complete
        
       });
-      
-      
-
     }).catch((error) => {
         console.error("Failed to load spritesheet:", error);
     });
   
-    
-    function test1() {
-      document.getElementById('slot-container').appendChild(app.view);
-    //const reelContainer = new PIXI.Container();
-    //app.stage.addChild(reelContainer);
-    const json = PIXI.Assets.load("./assets/spritesheet/codingTaskAssets.json");
-    console.log('json',json);
-    //const myArr = JSON.parse(json);
-    //console.log('myArr', myArr);
-   
-    json.then((resolvedTexture) =>{
-        console.log('resolvedTexture 123', resolvedTexture);
-        console.log('resolvedTexture.data.meta.image',resolvedTexture.data.meta.image);
-        /*const spritesheet = new PIXI.Spritesheet(
-            PIXI.Texture.from(resolvedTexture.data.meta.image),
-            resolvedTexture
-        );
-        spritesheet.parse().then(() => {
-          console.log('spritesheet', spritesheet);
-        }).catch((error) => {
-          console.error('Error parsing spritesheet:', error);
-        });*/
-        
-        resolvedTexture.data.animations = {
-          'symbols': ['symbol_9.png', 'symbol_10.png']
-        }
-      const anim = new PIXI.AnimatedSprite(resolvedTexture.data.animations.symbols);
-      console.log('anim', anim);
-      console.log('resolvedTexture.textures', resolvedTexture.textures);
-      const symbols = resolvedTexture.textures;
-      const symbolSprites = [];
-      //symbolSprites = symbols.filter((symbol) => symbol.startsWith("symbol_"));
-      //console.log('symbolSprites', symbolSprites);
-      symbolSprites.push(symbols['symbol_9.png'], symbols['symbol_10.png'], symbols['symbol_ace.png'], symbols['symbol_axe.png'], symbols['symbol_brain.png'], symbols['symbol_crow.png'], symbols['symbol_jack.png'], symbols['symbol_king.png'],symbols['symbol_king.png'], symbols['symbol_rifle.png']);
-      console.log('symbolSprites', symbolSprites);
-  
-    
-    });
-
-    }
-      
   </script>
 </body>
 </html>
